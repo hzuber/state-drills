@@ -19,6 +19,11 @@ describe ('Accordion component', () => {
           content: 'Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?',
         },
       ]
+    it('renders without errors', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<Accordion />, div);
+        ReactDOM.unmountComponentAtNode(div);
+    })
     it ('renders an empty li when the sections prop is not supplied', () => {
         const wrapper = shallow(<Accordion />)
         expect(wrapper.find('li').isEmpty()).to.equal(true)
